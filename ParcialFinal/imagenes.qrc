@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/planetas">
+        <file>images/planeta0.png</file>
+        <file>images/planeta1.png</file>
+        <file>images/planeta2.png</file>
+        <file>images/planeta3.png</file>
+        <file>images/planeta4.png</file>
+    </qresource>
+</RCC>
