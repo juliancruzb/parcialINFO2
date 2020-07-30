@@ -840,13 +840,23 @@
     <property name="geometry">
      <rect>
       <x>740</x>
-      <y>80</y>
+      <y>70</y>
       <width>111</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
      <string>Iniciar Simulación</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="universo">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>250</y>
+      <width>851</width>
+      <height>551</height>
+     </rect>
     </property>
    </widget>
    <zorder>tableWidget</zorder>
@@ -883,6 +893,7 @@
    <zorder>label</zorder>
    <zorder>stopSimulate</zorder>
    <zorder>startSimulate</zorder>
+   <zorder>universo</zorder>
   </widget>
  </widget>
  <resources/>

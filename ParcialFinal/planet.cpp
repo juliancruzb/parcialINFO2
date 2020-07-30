@@ -1,9 +1,8 @@
 #include "planet.h"
 
 
-Planet::Planet(QWidget *parent, int x, int y, int m, int r)
-{
-    setParent(parent);
+Planet::Planet(QGraphicsItem * parent, int color, int x, int y, int m, int r)
+{    
     setVisible(false);
     X = x;
     Y = y;
@@ -14,6 +13,31 @@ Planet::Planet(QWidget *parent, int x, int y, int m, int r)
     setRadio(r);
 }
 
+double Planet::getX() const
+{
+    return X;
+}
+
+void Planet::setX(double value)
+{
+    double a=0;
+    X = value;
+    a=value*relX;
+    setPosX(spanX + a - (tam/2));
+}
+
+double Planet::getY() const
+{
+    return Y;
+}
+
+void Planet::setY(double value)
+{
+    double a=0;
+    Y = value;
+    a=value*relY;
+    setPosY(spanY - a - (tam/2));
+}
 double Planet::getVelocidadX() const
 {
     return velocidadX;

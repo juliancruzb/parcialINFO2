@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -49,10 +50,12 @@ void MainWindow::configInitial()
     ui->tableWidget->setCellWidget(2,6,ui->vy2);
     ui->tableWidget->setCellWidget(3,6,ui->vy3);
     ui->tableWidget->setCellWidget(4,6,ui->vy4);
-    // Se crean planetas
+    //
+    qgs = new QGraphicsScene();
+    qgs->setSceneRect(0,0,904,609);
     // Se inicializan los planetas.
     for (int i=0; i<5; i++) {
-        p[i] = new Planet(this);
+        p[i] = new Planet();
     }
 }
 

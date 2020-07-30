@@ -1,10 +1,11 @@
 #ifndef PLANET_H
 #define PLANET_H
 
-#include <QLabel>
+#include <QGraphicsPixmapItem>
 
-class Planet : public QLabel
+class Planet : public QObject, public QGraphicsPixmapItem
 {
+    Q_OBJECT
 private:
     const int spanX = 436;
     const int spanY = 526;
@@ -13,9 +14,8 @@ private:
     double relY = 0.02857;
 
 public:
-    Planet(QWidget *parent = nullptr, int x=0, int y=0, int m=100, int r=100);
-    //Planet(QLabel *a, int x, int y, int m=100, int r=100);
-    QLabel *imagen;
+    Planet(QGraphicsItem * parent = 0, int color=0, int x=0, int y=0, int m=100, int r=100);
+    //Planet(QLabel *a, int x, int y, int m=100, int r=100);    
     int centroX;
     int centroY;
     int posX;
@@ -45,7 +45,7 @@ public:
     double getX() const;
     void setX(double value);
     double getY() const;
-    void setY(double value);
+    void setY(double value);   
 };
 
 #endif // PLANET_H

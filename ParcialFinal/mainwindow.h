@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QTimer>
+#include <QGraphicsScene>
 #include "planet.h"
 
 QT_BEGIN_NAMESPACE
@@ -29,6 +30,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QTimer *t;
+    QGraphicsScene *qgs;
+
     void configInitial();
 };
 #endif // MAINWINDOW_H
