@@ -1,12 +1,14 @@
 #include "planet.h"
 
 
-Planet::Planet(QGraphicsItem * parent, int color, int x, int y, int m, int r)
+Planet::Planet(QGraphicsItem * parent, QString color, int x, int y, int m, int r)
 {    
     setVisible(false);
+    imagePath = ":/planetas/" + color;
     X = x;
     Y = y;
     tam = 30 * (r/100);
+    setPixmap(QPixmap(imagePath).scaled(tam,tam));
     posX = spanX + (x * relX) - (tam/2);
     posY = spanY - (y * relY) - (tam/2);
     masa = m;
@@ -18,12 +20,12 @@ double Planet::getX() const
     return X;
 }
 
-void Planet::setX(double value)
+void Planet::setPosX(double value)
 {
     double a=0;
     X = value;
     a=value*relX;
-    setPosX(spanX + a - (tam/2));
+    setX(spanX + a - (tam/2));
 }
 
 double Planet::getY() const
@@ -31,12 +33,13 @@ double Planet::getY() const
     return Y;
 }
 
-void Planet::setY(double value)
+void Planet::setPosY(double value)
 {
     double a=0;
     Y = value;
     a=value*relY;
-    setPosY(spanY - a - (tam/2));
+    //setY(QReal(value));
+    setY(spanY - a - (tam/2));
 }
 double Planet::getVelocidadX() const
 {
@@ -57,7 +60,7 @@ void Planet::setRadio(double value)
 {
     radio = value;
     tam = 30 * (radio/100);
-    imagen->setGeometry(posX,posY,tam,tam);
+    setPixmap(QPixmap(imagePath).scaled(tam,tam));
 }
 
 double Planet::getMasa() const
@@ -78,18 +81,6 @@ int Planet::getPosX() const
 int Planet::getPosY() const
 {
     return posY;
-}
-
-void Planet::setPosX(int value)
-{
-    posX = value;
-    imagen->setGeometry(posX,posY,tam,tam);
-}
-
-void Planet::setPosY(int value)
-{
-    posY = value;
-    imagen->setGeometry(posX,posY,tam,tam);
 }
 
 int Planet::getCentroY() const

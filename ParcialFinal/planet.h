@@ -14,8 +14,9 @@ private:
     double relY = 0.02857;
 
 public:
-    Planet(QGraphicsItem * parent = 0, int color=0, int x=0, int y=0, int m=100, int r=100);
+    Planet(QGraphicsItem * parent = 0, QString color="0", int x=0, int y=0, int m=100, int r=100);
     //Planet(QLabel *a, int x, int y, int m=100, int r=100);    
+    QString imagePath;
     int centroX;
     int centroY;
     int posX;
@@ -34,18 +35,18 @@ public:
     double getMasa() const;
     void setMasa(double value);
     int getPosY() const;
-    void setPosY(int value);
+    void setPosY(double value);
     int getPosX() const;
-    void setPosX(int value);
+    void setPosX(double value);
     int getCentroY() const;
     void setCentroY(int value);
     int getCentroX() const;
     void setCentroX(int value);
     void setPos(int x, int y);
     double getX() const;
-    void setX(double value);
+
     double getY() const;
-    void setY(double value);   
+
 };
 
 #endif // PLANET_H

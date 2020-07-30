@@ -22,10 +22,15 @@ public:
 
 
 
+public slots:
+
+
 private slots:
     void updatePlanets();
     void on_startSimulate_clicked();
     void on_stopSimulate_clicked();
+
+    void on_randomPlanet_clicked();
 
 private:
     Ui::MainWindow *ui;

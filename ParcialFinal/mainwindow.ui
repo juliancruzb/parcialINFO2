@@ -827,7 +827,7 @@
     <property name="geometry">
      <rect>
       <x>740</x>
-      <y>140</y>
+      <y>160</y>
       <width>111</width>
       <height>23</height>
      </rect>
@@ -854,9 +854,22 @@
      <rect>
       <x>10</x>
       <y>250</y>
-      <width>851</width>
-      <height>551</height>
+      <width>850</width>
+      <height>550</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="randomPlanet">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>120</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Agregar Planeta</string>
     </property>
    </widget>
    <zorder>tableWidget</zorder>
@@ -894,6 +907,7 @@
    <zorder>stopSimulate</zorder>
    <zorder>startSimulate</zorder>
    <zorder>universo</zorder>
+   <zorder>randomPlanet</zorder>
   </widget>
  </widget>
  <resources/>

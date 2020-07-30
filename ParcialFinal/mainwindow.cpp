@@ -9,12 +9,16 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     //Se configura el timer.
     t = new QTimer;
-    connect(t,SIGNAL(timeout()),this,SLOT(updatePlanets()));
+    connect(t,&QTimer::timeout,this,&MainWindow::updatePlanets);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::updatePlanets() {
+
 }
 
 void MainWindow::configInitial()
@@ -50,9 +54,10 @@ void MainWindow::configInitial()
     ui->tableWidget->setCellWidget(2,6,ui->vy2);
     ui->tableWidget->setCellWidget(3,6,ui->vy3);
     ui->tableWidget->setCellWidget(4,6,ui->vy4);
-    //
+    //Se configura la escena y se agrega a la vista
     qgs = new QGraphicsScene();
-    qgs->setSceneRect(0,0,904,609);
+    qgs->setSceneRect(0,0,850,550);
+    ui->universo->setScene(qgs);
     // Se inicializan los planetas.
     for (int i=0; i<5; i++) {
         p[i] = new Planet();
@@ -88,7 +93,7 @@ void MainWindow::on_startSimulate_clicked()
                     valInt = static_cast<QSpinBox*>(ui->tableWidget->cellWidget(i,j))->value();
                     p[i]->setRadio(valInt);
                     if (valInt > 0) {
-                        p[i]->imagen->setVisible(true);
+                        //p[i]->imagen->setVisible(true);
                     }
                 break;
                 case 5:
@@ -115,3 +120,8 @@ void MainWindow::on_stopSimulate_clicked()
     t->stop();
 }
 
+
+void MainWindow::on_randomPlanet_clicked()
+{
+
+}
