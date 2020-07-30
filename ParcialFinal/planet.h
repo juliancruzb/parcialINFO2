@@ -7,15 +7,16 @@ class Planet : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 private:
-    const int spanX = 436;
-    const int spanY = 526;
-    double X,Y;
+    const int spanX = 406;
+    const int spanY = 250;
+
     double relX = 0.02857;
     double relY = 0.02857;
 
 public:
-    Planet(QGraphicsItem * parent = 0, QString color="0", int x=0, int y=0, int m=100, int r=100);
-    //Planet(QLabel *a, int x, int y, int m=100, int r=100);    
+    Planet(QString color="0", int x=0, int y=0, int m=100, int r=100);
+    //Planet(QLabel *a, int x, int y, int m=100, int r=100);
+    double X,Y;
     QString imagePath;
     int centroX;
     int centroY;
@@ -46,7 +47,7 @@ public:
     double getX() const;
 
     double getY() const;
-
+    void changeColor();
 };
 
 #endif // PLANET_H

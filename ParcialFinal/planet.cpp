@@ -1,7 +1,7 @@
 #include "planet.h"
 
 
-Planet::Planet(QGraphicsItem * parent, QString color, int x, int y, int m, int r)
+Planet::Planet(QString color, int x, int y, int m, int r)
 {    
     setVisible(false);
     imagePath = ":/planetas/" + color;
@@ -11,6 +11,8 @@ Planet::Planet(QGraphicsItem * parent, QString color, int x, int y, int m, int r
     setPixmap(QPixmap(imagePath).scaled(tam,tam));
     posX = spanX + (x * relX) - (tam/2);
     posY = spanY - (y * relY) - (tam/2);
+    setX(posX);
+    setY(posY);
     masa = m;
     setRadio(r);
 }
@@ -31,6 +33,12 @@ void Planet::setPosX(double value)
 double Planet::getY() const
 {
     return Y;
+}
+
+void Planet::changeColor() {
+    int color = rand() % 5;
+    imagePath = ":/planetas/" + QString::number(color);
+    setPixmap(QPixmap(imagePath).scaled(tam,tam));
 }
 
 void Planet::setPosY(double value)

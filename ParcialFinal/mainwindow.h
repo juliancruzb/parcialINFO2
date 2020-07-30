@@ -19,8 +19,11 @@ public:
     ~MainWindow();
 
     Planet *p[5];
+    Planet *aleatorios[10];
+    int alCont = 0;
+    bool randomEnable = true;
 
-
+    void updateRamdoms();
 
 public slots:
 
@@ -35,8 +38,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QTimer *t;
-    QGraphicsScene *qgs;
-
+    double T=1.0, G=1, R;
+    QGraphicsScene *scene;
     void configInitial();
 };
 #endif // MAINWINDOW_H
